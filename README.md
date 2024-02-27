@@ -16,7 +16,7 @@ This project is dedicated to predicting laptop prices using regression analysis.
 **Overfitting Detection and Mitigation:** Strategies to address and reduce overfitting in models.
 
 ## Getting Started
-Ensure you have Jupyter Notebook and the necessary Python libraries installed. Clone the repository and navigate to the project directory. Start with the EDA.ipynb notebook to understand the dataset, followed by Project_regression.ipynb for the predictive modeling part.
+Ensure you have Jupyter Notebook and the necessary Python libraries installed. Clone the repository and navigate to the project directory. Start with the laptop_price_EDA.ipynb notebook to understand the dataset, followed by Project_regression.ipynb for the predictive modeling part.
 
 ## Prerequisites
 Python 3.x \
@@ -24,7 +24,7 @@ Jupyter Notebook \
 Libraries: pandas, numpy, matplotlib, sklearn, plotly
 
 ## Usage
-Exploratory Data Analysis: Open EDA.ipynb to explore the dataset through interactive visualizations. Understand the data distribution, outliers, and relationships between features.
+Exploratory Data Analysis: Open laptop_price_EDA.ipynb to explore the dataset through interactive visualizations. Understand the data distribution, outliers, and relationships between features. \
 Regression Analysis: Proceed to Project_regression.ipynb for data preprocessing, feature engineering, model training, and evaluation.
 
 ## Contributing
