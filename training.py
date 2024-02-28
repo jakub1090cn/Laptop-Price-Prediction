@@ -270,11 +270,11 @@ def save_evaluation_data(X_test, y_test, X_train=None, y_train=None, prefix=''):
     - `<prefix>X_train.csv`: Training feature matrix (if `X_train` and `y_train` are provided).
     - `<prefix>y_train.csv`: Training target vector/matrix (if `X_train` and `y_train` are provided).
     """
-    X_test.to_csv(f'{prefix}X_test.csv', index=False)
-    y_test.to_csv(f'{prefix}y_test.csv', index=False)
+    X_test.to_csv(f'eval_data/{prefix}X_test.csv', index=False)
+    y_test.to_csv(f'eval_data/{prefix}y_test.csv', index=False)
     if X_train is not None and y_train is not None:
-        X_train.to_csv(f'{prefix}X_train.csv', index=False)
-        y_train.to_csv(f'{prefix}y_train.csv', index=False)
+        X_train.to_csv(f'eval_data/{prefix}X_train.csv', index=False)
+        y_train.to_csv(f'eval_data/{prefix}y_train.csv', index=False)
 
 def train_models(X_train, y_train, X_test, y_test):
     """
@@ -319,14 +319,10 @@ def train_models(X_train, y_train, X_test, y_test):
     for name, model in models.items():
         if name == 'poly':
             model.fit(X_train_poly, y_train)
-            y_pred = model.predict(X_test_poly)
-            joblib.dump(model, f'{name}_model.joblib')
-            np.savetxt(f'{name}_predictions.txt', y_pred)
+            joblib.dump(model, f'models/{name}_model.joblib')
         else:
             model.fit(X_train, y_train)
-            y_pred = model.predict(X_test)
-            joblib.dump(model, f'{name}_model.joblib')
-            np.savetxt(f'{name}_predictions.txt', y_pred)
+            joblib.dump(model, f'models/{name}_model.joblib')
 
     save_evaluation_data(X_test, y_test, X_train, y_train, prefix='final_')
 
