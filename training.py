@@ -15,7 +15,8 @@ def read_and_preprocess_data(source):
 
     The preprocessing steps include:
     - Invoking a preprocessing function that may apply encoding, normalization, etc.
-    - Dropping rows with any missing values.
+    - Dropping rows with any missing values. I am performing a drop of missing values to remove rows that contain
+    incomplete information about the subject.
     - Removing duplicate rows, keeping the first occurrence.
     - Removing outliers based on certain criteria defined in a separate function.
 
