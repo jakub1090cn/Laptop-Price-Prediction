@@ -15,7 +15,8 @@ def read_and_preprocess_data(source):
 
     The preprocessing steps include:
     - Invoking a preprocessing function that may apply encoding, normalization, etc.
-    - Dropping rows with any missing values. I am performing a drop of missing values to remove rows that contain
+    - Dropping rows with any missing values. As a result of extracting the data unit into the MemoryType column,
+    10 entries ended up with a NaN value. I am performing a drop of missing values to remove rows that contain
     incomplete information about the subject.
     - Removing duplicate rows, keeping the first occurrence.
     - Removing outliers based on certain criteria defined in a separate function.
@@ -180,7 +181,8 @@ def remove_outliers(df):
        Note:
        - This function only considers columns with numerical data.
        - The returned DataFrame may have fewer rows than the input DataFrame due to the removal of outliers.
-       - This method is based on the assumption that the data in the numerical columns follows a roughly symmetric distribution. For highly skewed distributions, consider using a different method for outlier detection.
+       - This method is based on the assumption that the data in the numerical columns follows a roughly symmetric
+       distribution. For highly skewed distributions, consider using a different method for outlier detection.
        """
     indices_to_remove = set()
 
